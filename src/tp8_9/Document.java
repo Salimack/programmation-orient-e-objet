@@ -3,7 +3,6 @@ package tp8_9;
 public class Document {
 
     // Attributs
-	private String test123;
     private int numero;
     private String titre;
 
