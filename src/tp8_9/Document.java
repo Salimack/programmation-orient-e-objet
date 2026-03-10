@@ -5,7 +5,6 @@ public class Document {
     // Attributs
     private int numero;
     private String titre;
-    private String auteur2;
 
     // Constructeurs
     public Document(int numero, String titre) {
