@@ -19,6 +19,6 @@ public class Livre extends Document {
 	}
 	
 	public String toString() {
-		return super.toString() + "Auteur : "+auteur+", nombre de pages : "+nombrePages;
+		return super.toString() + ", Auteur : "+auteur+", nombre de pages : "+nombrePages;
 	}
 }
