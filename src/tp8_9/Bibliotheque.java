@@ -51,4 +51,55 @@ public class Bibliotheque {
     public Document getUnDocument(int i) {
     	return documents.get(i);
     }
+
+    // Obtenir un document par son numéro
+    public Document getDocumentByNumero(int numero) {
+        for (Document d : documents) {
+            if (d.getNumero() == numero) {
+                return d;
+            }
+        }
+        return null;
+    }
+
+    // Menu de gestion de la bibliothèque
+    public void menu() {
+        int rep = 0;
+        DocumentFactory factory = new DocumentFactory();
+        while (rep != -1) {
+            System.out.println("**************MENU PRINCIPAL*************");
+            System.out.println("1 ===>  Ajouter un nouveau document");
+            System.out.println("2 ===>  Afficher tous les documents");
+            System.out.println("3 ===>  Afficher tous les auteurs");
+            System.out.println("4 ===>  Supprimer un document par son numéro");
+            System.out.println("-1 ===> Quitter");
+            System.out.println("********************************************");
+            rep = Saisie.lireEntier("Votre choix ? ");
+            if (rep == 1) {
+                String typeDocument = Saisie.lireChaine("Donnez le type de document à ajouter");
+                Document d = factory.getDocument(typeDocument);
+                if (d != null) {
+                    ajouter(d);
+                    System.out.println("Document ajouté !");
+                } else {
+                    System.out.println("Type de document non reconnu.");
+                }
+            }
+            else if (rep == 2) {
+                afficherDocuments();
+            }
+            else if (rep == 3) {
+                afficherAuteurs();
+            }
+            else if (rep == 4) {
+                int numero = Saisie.lireEntier("Numero du document à supprimer ? ");
+                Document document = this.getDocumentByNumero(numero);
+                if (document != null) {
+                    supprimer(document);
+                    System.out.println("Document supprimé !");
+                }
+                else System.out.println("Ce document n'existe pas...");
+            }
+        }// fin while
+    } // fin méthode menu
 }
