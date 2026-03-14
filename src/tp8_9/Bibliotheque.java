@@ -10,7 +10,7 @@ public class Bibliotheque {
 
     // Constructeurs
     public Bibliotheque() {
-    	this.documents = new ArrayList<>();
+    	this.documents = new ArrayList<Document>();
     }
 
     // Affichage de tous les documents de la bibliothèque
