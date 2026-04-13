@@ -1,7 +1,6 @@
 package tp11.exo2;
 
 import java.util.Iterator;
-
 public class IteratorDeTableauIterable<T> implements Iterator<T> {
 
     // Le tableau qu'on veut parcourir
